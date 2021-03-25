@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-import 'dados.dart';
+import 'home.dart';
 
 class HourWidget extends StatefulWidget {
   final String label;
@@ -21,21 +20,11 @@ class HourWidget extends StatefulWidget {
 }
 
 class _HourWidgetState extends State<HourWidget> {
-  Dados dados = Dados();
-
-  bool isActive = false;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          dados.excuteSelect(widget.position, widget.day);
-          isActive = widget.position.toString() +
-                  '|' +
-                  DateFormat.yMd('pt_BR').format(widget.day) ==
-              dados.selected;
-        });
+        MyStatefulWidget.of(context).addCounterBy1(widget.position, widget.day);
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),
@@ -43,7 +32,12 @@ class _HourWidgetState extends State<HourWidget> {
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: isActive == true ? Colors.blue : Colors.grey,
+          color: MyStatefulWidget.of(context).selected ==
+                  widget.position.toString() +
+                      '|' +
+                      DateFormat.yMd('pt_BR').format(widget.day)
+              ? Colors.blue
+              : Colors.grey,
         ),
         child: Center(
           child: Text(
