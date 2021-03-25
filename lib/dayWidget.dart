@@ -30,18 +30,30 @@ class DayWidget extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
-                    HourWidget(label: "06:00", active: false),
-                    HourWidget(label: "08:00", active: false),
-                    HourWidget(label: "09:00", active: false),
-                    HourWidget(label: "10:00", active: false),
-                    HourWidget(label: "11:00", active: false),
-                    HourWidget(label: "12:00", active: false),
-                    HourWidget(label: "13:00", active: false),
-                    HourWidget(label: "14:00", active: false),
-                    HourWidget(label: "15:00", active: false),
-                    HourWidget(label: "16:00", active: false),
-                    HourWidget(label: "17:00", active: false),
-                    HourWidget(label: "18:00", active: false),
+                    HourWidget(
+                        position: 1, label: "06:00", active: false, day: day),
+                    HourWidget(
+                        position: 2, label: "08:00", active: false, day: day),
+                    HourWidget(
+                        position: 3, label: "09:00", active: false, day: day),
+                    HourWidget(
+                        position: 4, label: "10:00", active: false, day: day),
+                    HourWidget(
+                        position: 5, label: "11:00", active: false, day: day),
+                    HourWidget(
+                        position: 6, label: "12:00", active: false, day: day),
+                    HourWidget(
+                        position: 7, label: "13:00", active: false, day: day),
+                    HourWidget(
+                        position: 8, label: "14:00", active: false, day: day),
+                    HourWidget(
+                        position: 9, label: "15:00", active: false, day: day),
+                    HourWidget(
+                        position: 10, label: "16:00", active: false, day: day),
+                    HourWidget(
+                        position: 11, label: "17:00", active: false, day: day),
+                    HourWidget(
+                        position: 12, label: "18:00", active: false, day: day),
                   ],
                 ),
               ),
