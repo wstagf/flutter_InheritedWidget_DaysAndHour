@@ -14,12 +14,18 @@ class _HourWidgetState extends State<HourWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      width: 100,
-      height: 60,
-      color: widget.active == true ? Colors.blue : Colors.grey,
+      margin: EdgeInsets.symmetric(vertical: 10),
+      width: 90,
+      height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: widget.active == true ? Colors.blue : Colors.grey,
+      ),
       child: Center(
-        child: Text(widget.label),
+        child: Text(
+          widget.label,
+          style: TextStyle(fontSize: 16),
+        ),
       ),
     );
   }
