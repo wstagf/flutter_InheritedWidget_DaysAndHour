@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Dados {
   static final Dados _singleton = Dados._internal();
 
@@ -9,7 +11,8 @@ class Dados {
 
   String selected = '';
 
-  void excuteSelect(String code, DateTime day) {
-    selected = code;
+  void excuteSelect(int position, DateTime day) {
+    selected = position.toString() + '|' + DateFormat.yMd('pt_BR').format(day);
+    print('selecionou ' + selected);
   }
 }
